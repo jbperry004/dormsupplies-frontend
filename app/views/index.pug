@@ -1,0 +1,18 @@
+extends template
+
+block content
+    h1 Welcome to Dorm Supplies
+    form(id="home")
+        h2 Sign up for Supply Delivery
+        input(type='text' name='name' placeholder='Name') 
+        br
+        input(type='email' name='email' placeholder='Email') 
+        br
+        input(type='number' name='classYear' placeholder='Class year') 
+        br
+        input(type='text' name='password' placeholder='Password') 
+        br
+        input(type='text' name='address' placeholder='Address')
+        button(type='submit' onclick='register()') Register
+
+
