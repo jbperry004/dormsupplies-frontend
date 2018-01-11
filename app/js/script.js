@@ -1,5 +1,6 @@
 const form = document.forms[0]
 
+
 function register() {
 	const data = {}
 
@@ -9,6 +10,8 @@ function register() {
 	if (form.password.value) data.password = form.password.value
 	if (form.address.value) data.address = form.address.value	
 
+	console.log(data)
+	window.location.href = '/browse'
 	fetch('/register', {
 		headers: {
 			'Content-Type': 'application/json'
@@ -16,12 +19,19 @@ function register() {
 		method: 'POST', 
 		body: JSON.stringify(data)
 	}).then(function(res) {
+		console.log("then")
+		if (!res.ok) return alert('Bad request')
 		res.json()
 		.then(function(user) {
 			alert(JSON.stringify(user))
+			console.log("HII")
+			window.href = '/browse'
+			console.log("BYEE")
 		})
 	}).catch(function(err) {
-		console.log("hi")
+		console.log("catch")
 		console.log(err)
+		alert('Erro!')
 	})
 }
+ 

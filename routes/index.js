@@ -11,7 +11,11 @@ router.post('/register', (req, res, next) => {
 	request.post({
 		url: config.apiUrl + '/users',
 		form: req.body
-	}).pipe(res)
-})
+	}).pipe(res);
+});
+
+router.get('/browse', (req, res, next) => {
+	return res.render('browse');
+});
 
 module.exports = router;

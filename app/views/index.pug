@@ -1,18 +1,41 @@
 extends template
 
 block content
-    h1 Welcome to Dorm Supplies
-    form(id="home")
-        h2 Sign up for Supply Delivery
-        input(type='text' name='name' placeholder='Name') 
-        br
-        input(type='email' name='email' placeholder='Email') 
-        br
-        input(type='number' name='classYear' placeholder='Class year') 
-        br
-        input(type='text' name='password' placeholder='Password') 
-        br
-        input(type='text' name='address' placeholder='Address')
-        button(type='submit' onclick='register()') Register
+    // h1 Welcome to Dorm Supplies
+
+    #navbar
+        span Dorm Supplies 
+        #nb-items
+            a(href='')
+                span browse
+            a(href='')
+                span register
+            #nb-profpic
+
+    .form-box
+        h2 Register
+        form
+            .fb-item
+                span Name
+                br
+                input(type='text' name='name' placeholder='Name')
+            .fb-item
+                span Email
+                br
+                input(type='email' name='email' placeholder='Email') 
+            .fb-item
+                span Class
+                br
+                input(type='number' name='classYear' placeholder='Class year')
+            .fb-item
+                span Password
+                br
+                input(type='password' name='password' placeholder='Password')
+            .fb-item
+                span Address 
+                br
+                input(type='text' name='address' placeholder='Address')
+            button#submit(type='submit' onclick='register()') Register
+
 
 
